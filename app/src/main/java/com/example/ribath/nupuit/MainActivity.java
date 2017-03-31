@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
         addContactstoDB();
         addmore();
 
-        mAdapter = new ContactAdapter(list, owner_name, owner_number);
+        mAdapter = new ContactAdapter();
+        mAdapter.setData(list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -86,11 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             limit = limit+10;
                             addmore();
-                            mAdapter = new ContactAdapter(list, owner_name, owner_number);
-                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                            recyclerView.setLayoutManager(mLayoutManager);
-                            recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            recyclerView.setAdapter(mAdapter);
+                            mAdapter.setData(list);
                             mAdapter.notifyDataSetChanged();
                         }
                     }

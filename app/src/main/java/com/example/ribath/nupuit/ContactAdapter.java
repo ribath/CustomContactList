@@ -22,11 +22,13 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private static final int TYPE_ITEM = 2;
     String TAG = "Adapter";
 
-    public ContactAdapter(List<ContactClass> contactList, String owner_name, String owner_number) {
-        this.contactList = contactList;
-        this.owner_name = owner_name;
-        this.owner_number = owner_number;
+    public ContactAdapter() {
         Log.i(TAG, "Adapter Called");
+    }
+
+    public void setData(List<ContactClass> contactList)
+    {
+        this.contactList = contactList;
     }
 
     @Override
@@ -41,7 +43,7 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact_list_footer, parent, false);
             return new FooterViewHolder(itemView);
         }
-            return null;
+        return null;
     }
 
     @Override
