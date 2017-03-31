@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         // do whatever
                         Toast.makeText(MainActivity.this, "postion "+position+" clicked",
                                 Toast.LENGTH_LONG).show();
-                        if (position==list.size()+1)
+                        if (position==list.size())
                         {
                             limit = limit+10;
                             addmore();

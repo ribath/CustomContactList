@@ -68,7 +68,7 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemCount() {
-        return contactList.size()+2;
+        return contactList.size()+1;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -91,7 +91,7 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemViewType(int position) {
-        if (position == contactList.size() + 1) {
+        if (position == contactList.size()) {
             return TYPE_FOOTER;
         }
         return TYPE_ITEM;
